@@ -1,8 +1,17 @@
 const {Router} = require('express');
-const router = Router();
+const { eliminar,select,insert,update } = require('../controllers/crudController');
 
-router.get('/',(res,req)=>{
-    res.send ('hello world');
-})
+const router = Router();
+const pool = require('../db')
+
+router.get('/tasks', select)
+
+router.post('/tasks',insert)
+
+router.delete('/tasks',eliminar)
+
+router.put('/tasks',update)
+
+
 
 module.exports = router;

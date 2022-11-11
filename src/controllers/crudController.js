@@ -6,6 +6,8 @@ const select = async (res,req)=>{
 }
 
 const insert = async (res,req)=>{
+    const tarea = req.body
+    console.log(tarea)
     res.send ('insertar datos');
 }
 
